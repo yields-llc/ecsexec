@@ -37,7 +37,11 @@ func (p *ExecCommand) Synopsis() string {
 
 // Usage is a usage of this command.
 func (p *ExecCommand) Usage() string {
-	return "exec -profile <AWS_PROFILE> -cluster <ECS cluster name> -service <ECS service name>"
+	return `exec -profile <AWS_PROFILE> \
+    -cluster <ECS cluster name> \
+    -service <ECS service name> \
+    -container <container name> \
+    -command <command>`
 }
 
 // SetFlags is definitions of this command arguments.
