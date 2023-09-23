@@ -1,8 +1,8 @@
 # ecsexec
-"ecsexec" is a command that makes "aws ecs execute-command" useful.  
-"ecsexec" does not require a task ID. Instead, service name is required.  
+`ecsexec` is a command that makes "aws ecs execute-command" useful.  
+`ecsexec` does not require a task ID. Instead, service name is required.  
 
-"aws ecs execute-command" usage example is as follows.
+`aws ecs execute-command` usage example is as follows.
 
 ```bash
 $ aws ecs execute-command \
@@ -13,10 +13,10 @@ $ aws ecs execute-command \
     --command "/bin/sh"
 ```
 
-"--task" is the task ID, but this task ID is tricky.  
+`--task` is the task ID, but this task ID is tricky.  
 The task ID is temporary and not something the user can guess. 
 
-"ecsexec" usage example is as follows.
+`ecsexec` usage example is as follows.
 
 ```bash
 $ ecsexec exec \
@@ -27,12 +27,12 @@ $ ecsexec exec \
     -command "/bin/sh"
 ```
 
-"-service" is the service name, but service name is not tricky.  
+`-service` is the service name, but service name is not tricky.  
 Service names are constant and user-friendly.
 
-"ecsexec" simplifies command execution by specifying the service name rather than the task ID.
+`ecsexec` simplifies command execution by specifying the service name rather than the task ID.
 
-"ecsexec" will start the service with desired count 1 if the service is not running, and after execution, "ecsexec" will stopp the service with desired count 0.  
+`ecsexec` will start the service with desired count 1 if the service is not running, and after execution, `ecsexec` will stop the service with desired count 0.  
 
 ```bash
 $ ecsexec exec -profile=yields -cluster=demo -service=demo -container=demo -command="ls -la /var/log"
@@ -82,7 +82,7 @@ Exiting session with sessionId: ecs-execute-command-0d685051f95db36a6.
 ```
 
 ## Required
-"ecsexec" requires the following programs to be installed.  
+`ecsexec` requires the following programs to be installed.  
 
 - Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 - Install [Session Manager plugin for the AWS CLI](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html)
